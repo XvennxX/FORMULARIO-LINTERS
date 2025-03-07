@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './src/main.js',
-    style: './src/assets/styles.css'
+    style: './src/assets/styles.css',
   },
   devtool: 'source-map',
   plugins: [
@@ -22,14 +22,14 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][ext]',
-        }
+        },
       },
       {
         test: /\.js$/,
@@ -38,13 +38,13 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            sourceType: 'module'
-          }
-        }
+            sourceType: 'module',
+          },
+        },
       },
-    ]
+    ],
   },
   optimization: {
-    runtimeChunk: 'single'
-  }
+    runtimeChunk: 'single',
+  },
 };
