@@ -2,12 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     index: './src/main.js',
     style: './src/assets/styles.css',
+
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+    hot: true,
+    liveReload: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -23,6 +29,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -31,17 +38,7 @@ module.exports = {
           filename: 'assets/images/[name][ext]',
         },
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            sourceType: 'module',
-          },
-        },
-      },
+
     ],
   },
   optimization: {
