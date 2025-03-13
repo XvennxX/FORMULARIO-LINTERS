@@ -516,6 +516,7 @@
     "xdg-basedir": "^4.0.0",
     "xml-name-validator": "^4.0.0",
     "xmlchars": "^2.2.0",
+    "xpress": "^2.4.6",
     "yallist": "^4.0.0",
     "yaml": "^1.10.2",
     "yargs-parser": "^20.2.9",
