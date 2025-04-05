@@ -3,7 +3,7 @@ name: Build and Deploy to Azure VM
 on:
   push:
     branches:
-      - developgit # adjust if you deploy from a different branch
+      - Develop  # adjust if you deploy from a different branch
 
 jobs:
   build-and-deploy:
